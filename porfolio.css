@@ -1,0 +1,241 @@
+:root{
+  --page-white:#f0f0f0;
+  --page-red: #2862a1;
+  --page-blue:#45567d;
+  --page-gray:#303841;
+}
+*{
+  margin:0;
+  padding:0;
+}
+*,*::before,*::after{
+  box-sizing:inherit;
+}
+html{
+  box-sizing:border-box;
+  font-size:62.5%;
+  scroll-behavior:smooth;
+}
+@media (max-width:75em){
+  html{
+    font-size:60%;
+  }
+}
+@media (max-width:61.25em){
+  html{
+    font-size:58%;
+  }
+}
+@media (max-width:28.75em){
+  html{
+    font-size:54%;
+  }
+}
+
+body{
+  font-family:'poppins',sans-serif;
+  font-size:1.8rem;
+  line-height:1.5;
+  font-weight:400;
+  color:var(--page-white);
+}
+ul{
+  list-style:none;
+}
+a{
+  text-decoration:none;
+  color:var(--page-white);
+}
+nav{
+  position:fixed;
+  display:flex;
+  justify-content:flex-end;
+  top:0;
+  left:0;
+  width:100%;
+  background:var(--page-red);
+  z-index:1;
+  box-shadow:0 2px 0 rgba(0,0,0,0.5)
+}
+nav > ul{
+  display:flex;
+  margin-right:2rem;
+}
+@media (max-width:28.75em){
+  nav{
+    justify-content:center;
+  }
+  nav > ul{
+    margin:0 1rem;
+  }
+}
+ul a{
+  display:block;
+  padding:2.2rem;
+  font-size:2rem;
+}
+ul a:hover{
+  background:var(--page-blue);
+}
+h1{
+  font-size:5.5rem;
+}
+h2{
+  font-size:4.2rem;
+}
+h1,h2{
+  font-weight:700;
+  font-family:'raleway',sans-serif;
+  text-align:center;
+}
+#welcome-section{
+  display:flex;
+  flex-direction:column;
+  background-color:#000;
+  background-image:linear-gradient(60deg,#3a3d40 0%, #181719 100%);
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  height:100vh;
+}
+#welcome-section p{
+  font-size:3rem;
+  font-weight:200;
+  font-style:italic;
+  color:var(--page-red);
+}
+/**project section**/
+#projects{
+  text-align:center;
+  padding:10rem 2rem;
+  background:var(--page-blue);
+}
+#projects h2{
+  max-width:640px;
+  margin:0 auto 5rem auto;
+  text-align:center;
+  border-bottom:0.2rem solid var(--page-white);
+}
+@media (max-width:28.7rem){
+  #projects h2{
+    font-size:4rem;
+  }
+}
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap:4rem;
+  width:100%;
+  max-width:1280px;
+  margin:0 auto;
+  margin-bottom:6rem;
+}
+@media (max-width:30rem){
+  #projects{
+    padding:5rem 1rem;
+  }
+  #projects-grid{
+    grid-template-columns:1fr;
+  }
+}
+.project-tile{
+  background:var(--page-gray);
+  border-radius:2px;
+  box-shadow:1px 1px 3px rgba(0,0,0,0.5);
+  width:95%;
+}
+.code{
+  color:var(--page-gray);
+  transition:color 0.2s ease-out;
+}
+.project-tile:hover .code{
+  color:var(--page-red);
+}
+.project-image{
+  height:calc(100% - 6.8rem);
+  width:100%;
+  object-fit:cover;
+}
+.project-title{
+  font-size:2rem;
+  padding:1.5rem 0.2rem;
+}
+.btn{
+  display:inline-block;
+  padding:0.8rem 2rem;
+  border-radius:2px;
+}
+.btn-show-all{
+  background:var(--page-gray);
+  font-size:2rem;
+  transition:background 0.4s ease-out;
+}
+.btn-show-all:hover{
+  background:var(--page-red);
+}
+.btn-show-all:hover > i{
+  transform:translateX(2px);
+}
+.btn-show-all > i{
+  margin-left:8px;
+  transform:translateX(0);
+  transition:transform 0.3s ease-out;
+}
+/*contact section*/
+#contact{
+  display:flex;
+  flex-direction:column;
+  background:var(--page-gray);
+  padding:0 2rem;
+  height:80vh;
+  width:100%:
+  text-align:center;
+  justify-content:center;
+  align-items:center;
+}
+.contact-section-header > h2{
+  font-size:6rem;
+}
+@media (max-width:28.7em){
+  .contact-section-header > h2{
+    font-size:4rem;
+  }
+}
+.contact-section-header > p{
+  font-style:italic;
+  text-align:center;
+}
+.contact-section-links{
+  display:flex;
+  justify-content:center;
+  width:100%;
+  max-width:980px;
+  margin-top:4rem;
+  flex-wrap:wrap;
+}
+.contact-details{
+  font-size:2.4rem;
+  text-shadow:2px 2px 2px #1f1f1f;
+  transition:transform 0.4s ease-out;
+}
+.contact-details:hover{
+  transform:translateY(7px);
+}
+/*footer*/
+footer{
+  font-weight:300;
+  background:var(--page-gray);
+  border-top:3px solid var(--page-red);
+  justify-content:space-evenly;
+  display:flex;
+  padding:2rem;
+}
+footer p{
+  margin:2rem;
+}
+@media (max-width:28.7em){
+  footer{
+    flex-direction:column;
+    text-align:center;
+  }
+}
